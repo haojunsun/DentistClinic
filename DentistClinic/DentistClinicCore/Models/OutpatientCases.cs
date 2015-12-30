@@ -76,5 +76,7 @@ namespace DentistClinic.Core.Models
         /// 费用
         /// </summary>
         public decimal Cost { get; set; }
+
+        public DateTime? AddTime { get; set; }
     }
 }

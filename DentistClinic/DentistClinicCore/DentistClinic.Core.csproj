@@ -53,6 +53,10 @@
     <Compile Include="Migrations\201512300540594_InitialCreate.Designer.cs">
       <DependentUpon>201512300540594_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512300651192_addtime.cs" />
+    <Compile Include="Migrations\201512300651192_addtime.Designer.cs">
+      <DependentUpon>201512300651192_addtime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MaterialCategory.cs" />
     <Compile Include="Models\MedicalCategory.cs" />
@@ -77,6 +81,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201512300540594_InitialCreate.resx">
       <DependentUpon>201512300540594_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512300651192_addtime.resx">
+      <DependentUpon>201512300651192_addtime.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
