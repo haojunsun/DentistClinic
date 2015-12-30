@@ -59,6 +59,9 @@
     <Compile Include="Models\OutpatientCases.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AppDbContext.cs" />
+    <Compile Include="Services\MaterialCategoryService.cs" />
+    <Compile Include="Services\MedicalCategoryService.cs" />
+    <Compile Include="Services\OutpatientCasesService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -70,9 +73,7 @@
       <Name>DentistClinic.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201512300540594_InitialCreate.resx">
       <DependentUpon>201512300540594_InitialCreate.cs</DependentUpon>
