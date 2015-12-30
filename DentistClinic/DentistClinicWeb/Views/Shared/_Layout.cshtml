@@ -1,45 +1,161 @@
-﻿<!DOCTYPE html>
+﻿@functions {
+    public string CheckActive(string controller)
+    {
+        var controllers = controller.Split(',');
+        string currentController = Request.RequestContext.RouteData.Values["controller"].ToString();
+        return controllers.Any(x => x == currentController) ? "active" : "";
+    }
+}
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>@ViewBag.Title - 长源牙科门诊就诊登记</title>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="~/Assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" />
+    <link href="~/Assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Assets/plugins/uniform/css/uniform.default.min.css" rel="stylesheet" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    @RenderSection("head", false)
+    <!-- END PAGE LEVEL STYLES -->
+    <!-- BEGIN THEME STYLES -->
+    <link href="~/Assets/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css">
+    <link href="~/Assets/css/plugins.css" rel="stylesheet" type="text/css">
+    <link href="~/Assets/css/layout.css" rel="stylesheet" type="text/css">
+    <link href="~/Assets/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color">
+    <link href="~/Assets/css/custom.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/site-admin.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME STYLES -->
+    <script>
+        var sc = sc || {};
+        sc.baseUrl = '@Url.Content("~/")';
+    </script>
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("应用程序名称", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                    <li>@Html.ActionLink("关于", "About", "Home")</li>
-                    <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+<body ng-app="scApp" ng-controller="RootController">
+    <!-- BEGIN HEADER -->
+    <div class="page-header">
+        <!-- BEGIN HEADER TOP -->
+        <div class="page-header-top">
+            <div class="container">
+                <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="@Url.Action("Index", "Home")">
+                        <h1>长源牙科</h1>
+                    </a>
+                </div>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler"></a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+          
             </div>
         </div>
+        <!-- END HEADER TOP -->
+        <!-- BEGIN HEADER MENU -->
+        <div class="page-header-menu">
+            <div class="container">
+                <!-- BEGIN MEGA MENU -->
+                <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
+                <!-- DOC: Remove data-hover="dropdown" and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
+                <div class="hor-menu ">
+                    <ul class="nav navbar-nav">
+                        <li >
+                            <a  href="javascript:;" >
+                                首页
+                            </a>
+                        </li>
+                        <li >
+                            <a  href="javascript:;" >
+                                门诊记录
+                            </a>
+                        </li>
+                        <li class="menu-dropdown ">
+                            <a  href="javascript:;" >
+                                系统设置
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- END MEGA MENU -->
+            </div>
+        </div>
+        <!-- END HEADER MENU -->
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
-        </footer>
+    <!-- END HEADER -->
+    <!-- BEGIN PAGE CONTAINER -->
+    <div class="page-container">
+        <!-- BEGIN PAGE HEAD -->
+        <div class="page-head">
+            <div class="container">
+                <!-- BEGIN PAGE TITLE -->
+                <div class="page-title">
+                    <h1>@ViewBag.Title <small>@ViewBag.SubTitle</small></h1>
+                </div>
+                <!-- END PAGE TITLE -->
+                <!-- BEGIN PAGE TOOLBAR -->
+                <div class="page-toolbar">
+                    <!-- PH: 空置工具栏 -->
+                </div>
+                <!-- END PAGE TOOLBAR -->
+            </div>
+        </div>
+        <!-- END PAGE HEAD -->
+        <!-- BEGIN PAGE CONTENT -->
+        <div class="page-content">
+            <div class="container">
+                <!-- BEGIN PAGE CONTENT INNER -->
+                @RenderBody()
+                <!-- END PAGE CONTENT INNER -->
+            </div>
+        </div>
+        <!-- END PAGE CONTENT -->
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <!-- END PAGE CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <div class="page-footer">
+        <div class="container">
+            2015 &copy; Changyuan Technology <a href="#" target="_blank">长源牙科</a>
+        </div>
+    </div>
+    <div class="scroll-to-top">
+        <i class="icon-arrow-up"></i>
+    </div>
+    <!-- END FOOTER -->
+    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- BEGIN CORE PLUGINS -->
+    <script src="~/Assets/plugins/jquery.min.js" type="text/javascript"></script>
+    <script src="~/Assets/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+    <script src="~/Assets/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="~/Assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/Assets/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+    <script src="~/Assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="~/Assets/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="~/Assets/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+    <script src="~/Assets/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+    <script src="~/Assets/scripts/metronic.js" type="text/javascript"></script>
+    <script src="~/Assets/scripts/layout.js" type="text/javascript"></script>
+    <script src="~/Scripts/angular.bundled.min.js"></script>
+    <script src="~/Scripts/angular.ui-sortable.js"></script>
+    <script src="~/Scripts/ng-infinite-scroll.min.js"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    @RenderSection("~/Scripts", false)
+    <!-- END PAGE LEVEL PLUGINS -->
+    <script src="~/Scripts/seco-app-admin.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            // initiate layout and plugins
+            Metronic.init(); // init metronic core components
+            Layout.init(); // init current layout
+        });
+    </script>
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    @RenderSection("foot", false)
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <!-- END JAVASCRIPTS -->
 </body>
 </html>

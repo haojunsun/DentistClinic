@@ -1,4 +1,5 @@
-﻿using Microsoft.Owin;
+﻿using DentistClinic.Web.App_Start;
+using Microsoft.Owin;
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(DentistClinic.Web.Startup))]
@@ -8,7 +9,7 @@ namespace DentistClinic.Web
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+            DependencyConfig.RegisterDependencies(app);
         }
     }
 }
