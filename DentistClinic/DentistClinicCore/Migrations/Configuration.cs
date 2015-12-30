@@ -9,7 +9,7 @@ namespace DentistClinic.Core.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(DentistClinic.Core.Repositories.AppDbContext context)

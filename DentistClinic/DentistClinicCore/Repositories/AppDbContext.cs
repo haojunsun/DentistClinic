@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DentistClinic.Core.Models;
 using DentistClinic.Infrastructure;
 
 namespace DentistClinic.Core.Repositories
@@ -15,6 +16,10 @@ namespace DentistClinic.Core.Repositories
         {
         }
 
-        // public DbSet<OutpatientCases> Articles { get; set; }
+        public DbSet<OutpatientCases> OutpatientCases { get; set; }
+
+        public DbSet<MedicalCategory> MedicalCategories { get; set; }
+
+        public DbSet<MaterialCategory> MaterialCategories { get; set; }
     }
 }

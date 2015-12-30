@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace DentistClinic.Core.Models
 {
+    /// <summary>
+    /// 材料
+    /// </summary>
     public class MaterialCategory
     {
         /// <summary>

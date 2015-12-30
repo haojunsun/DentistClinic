@@ -19,7 +19,6 @@ namespace DentistClinic.Core.Models
 
         public string Sex { get; set; }
 
-        
         public int age { get; set; }
 
         /// <summary>
@@ -32,8 +31,16 @@ namespace DentistClinic.Core.Models
         /// </summary>
         public string MedicalHistory { get; set; }
 
-        //查体
-        //治疗
+
+        /// <summary>
+        /// 查体
+        /// </summary>
+        public virtual MedicalCategory Checkup { get; set; }
+
+        /// <summary>
+        /// 治疗
+        /// </summary>
+        public virtual MedicalCategory Treatment { get; set; }
 
         /// <summary>
         /// 牙位 上
@@ -63,7 +70,7 @@ namespace DentistClinic.Core.Models
         /// <summary>
         /// 联系地址
         /// </summary>
-        public string Address { get;set;}
+        public string Address { get; set; }
 
         /// <summary>
         /// 费用
