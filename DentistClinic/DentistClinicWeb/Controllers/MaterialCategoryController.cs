@@ -56,6 +56,7 @@ namespace DentistClinic.Web.Controllers
             {
                 return JumpUrl("List", "材料类别不能为空!");
             }
+            
             var mn = new MaterialCategory();
             mn.MaterialName = materialName;
             _material.Add(mn);
@@ -74,9 +75,12 @@ namespace DentistClinic.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(int id, string materialName)
+        public ActionResult Edit(MaterialCategory article)
         {
-            return View();
+            var old = _material.Get(article.MaterialCategoryId);
+            old.MaterialName = article.MaterialName;
+            _material.Update(old);
+            return JumpUrl("List", "系统设置-材料类别-编辑成功！");
         }
     }
 }
