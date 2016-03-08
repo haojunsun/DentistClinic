@@ -479,6 +479,7 @@
     <Content Include="Assets\img\logo-big.png" />
     <Content Include="Assets\img\logo-blue-hoki.png" />
     <Content Include="Assets\img\logo-blue-steel.png" />
+    <Content Include="Assets\img\logo-default.jpg" />
     <Content Include="Assets\img\logo-default.png" />
     <Content Include="Assets\img\logo-green-haze.png" />
     <Content Include="Assets\img\logo-purple-plum.png" />
@@ -923,10 +924,12 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\MaterialCategory\List.cshtml" />
+    <Content Include="Views\MaterialCategory\Add.cshtml" />
+    <Content Include="Views\MaterialCategory\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\MaterialCategory\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -15,10 +15,19 @@ namespace DentistClinic.Core.Models
         /// </summary>
         public DateTime? VisitingTime { get; set; }
 
+        /// <summary>
+        /// 姓名
+        /// </summary>
         public string Name { get; set; }
 
+        /// <summary>
+        /// 性别
+        /// </summary>
         public string Sex { get; set; }
 
+        /// <summary>
+        /// 年龄
+        /// </summary>
         public int age { get; set; }
 
         /// <summary>

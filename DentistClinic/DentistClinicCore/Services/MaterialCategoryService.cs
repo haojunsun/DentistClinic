@@ -15,6 +15,7 @@ namespace DentistClinic.Core.Services
         void Update(MaterialCategory mc);
         void Delete(int id);
         MaterialCategory Get(int id);
+        IEnumerable<MaterialCategory> List(int pageIndex, int pageSize, ref int totalCount);
     }
 
     public class MaterialCategoryService : IMaterialCategoryService
@@ -30,9 +31,19 @@ namespace DentistClinic.Core.Services
             return _appDbContext.MaterialCategories.OrderByDescending(x => x.MaterialCategoryId).ToList();
         }
 
+        public IEnumerable<MaterialCategory> List(int pageIndex, int pageSize, ref int totalCount)
+        {
+            var list = (from p in _appDbContext.MaterialCategories
+                        orderby p.MaterialCategoryId descending
+                        select p).Skip((pageIndex - 1) * pageSize).Take(pageSize);
+            totalCount = _appDbContext.MaterialCategories.Count();
+            return list.ToList();
+
+        }
+
         public void Add(MaterialCategory mc)
         {
-             _appDbContext.MaterialCategories.Add(mc);
+            _appDbContext.MaterialCategories.Add(mc);
             _appDbContext.SaveChanges();
         }
 
