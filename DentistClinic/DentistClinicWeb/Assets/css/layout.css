@@ -730,7 +730,10 @@ Page Header
   height: 75px;
 }
 .page-header .page-header-top .page-logo .logo-default {
-  margin: 29.5px 0 0 0;
+   float: left;
+   display: block;
+   width: 255px;
+   height: 75px;
 }
 .page-header .page-header-top .top-menu {
   margin: 13px 0 0;

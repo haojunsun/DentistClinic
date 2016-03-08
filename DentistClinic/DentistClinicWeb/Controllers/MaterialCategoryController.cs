@@ -26,7 +26,7 @@ namespace DentistClinic.Web.Controllers
             return View();
         }
 
-        public ActionResult Del()
+        public ActionResult Del(int id)
         {
             return View();
         }
@@ -35,6 +35,19 @@ namespace DentistClinic.Web.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Add(string name)
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            return View();
+        }
+
+        [HttpPost]
         public ActionResult Edit()
         {
             return View();
