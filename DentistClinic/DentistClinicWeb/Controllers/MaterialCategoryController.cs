@@ -11,6 +11,9 @@ using PagedList;
 
 namespace DentistClinic.Web.Controllers
 {
+    /// <summary>
+    /// 材料 管理
+    /// </summary>
     public class MaterialCategoryController : ControllerHelper
     {
         private readonly IMaterialCategoryService _material;
@@ -34,7 +37,11 @@ namespace DentistClinic.Web.Controllers
 
         public ActionResult Del(int id)
         {
-            return View();
+            var old = _material.Get(id);
+            if (old == null)
+                return JumpUrl("List", "id错误");
+            _material.Delete(id);
+            return JumpUrl("List", "删除成功");
         }
 
         public ActionResult Add()
@@ -43,18 +50,31 @@ namespace DentistClinic.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(string name)
+        public ActionResult Add(string materialName)
         {
-            return View();
+            if (string.IsNullOrEmpty(materialName))
+            {
+                return JumpUrl("List", "材料类别不能为空!");
+            }
+            var mn = new MaterialCategory();
+            mn.MaterialName = materialName;
+            _material.Add(mn);
+            return JumpUrl("List", "系统设置-材料类别-创建成功！");
         }
+
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            return View();
+            var article = _material.Get(id);
+            if (article == null)
+            {
+                return JumpUrl("List", "id错误!");
+            }
+            return View(article);
         }
 
         [HttpPost]
-        public ActionResult Edit()
+        public ActionResult Edit(int id, string materialName)
         {
             return View();
         }
