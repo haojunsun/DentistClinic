@@ -13,7 +13,7 @@ namespace DentistClinic.Core.Models
         /// <summary>
         /// 就诊时间
         /// </summary>
-        public DateTime? VisitingTime { get; set; }
+        public string VisitingTime { get; set; }
 
         /// <summary>
         /// 姓名
@@ -28,7 +28,7 @@ namespace DentistClinic.Core.Models
         /// <summary>
         /// 年龄
         /// </summary>
-        public int age { get; set; }
+        public string age { get; set; }
 
         /// <summary>
         /// 主诉
@@ -44,22 +44,32 @@ namespace DentistClinic.Core.Models
         /// <summary>
         /// 查体
         /// </summary>
-        public virtual MedicalCategory Checkup { get; set; }
+        public virtual string Checkup { get; set; }
 
         /// <summary>
         /// 治疗
         /// </summary>
-        public virtual MedicalCategory Treatment { get; set; }
+        public virtual string Treatment { get; set; }
 
         /// <summary>
-        /// 牙位 上
+        /// 牙位 上左
         /// </summary>
-        public string TeethUp { get; set; }
+        public string TeethUpLeft { get; set; }
 
         /// <summary>
-        /// 牙位 下
+        /// 牙位 上右
         /// </summary>
-        public string TeethDown { get; set; }
+        public string TeethUpRight { get; set; }
+
+        /// <summary>
+        /// 牙位 下左
+        /// </summary>
+        public string TeethDownLeft { get; set; }
+
+        /// <summary>
+        /// 牙位 下右
+        /// </summary>
+        public string TeethDownRight { get; set; }
 
         /// <summary>
         /// 完成日期

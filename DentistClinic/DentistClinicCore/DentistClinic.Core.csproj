@@ -61,6 +61,14 @@
     <Compile Include="Migrations\201603090214412_addphone.Designer.cs">
       <DependentUpon>201603090214412_addphone.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201603090735351_Teeth.cs" />
+    <Compile Include="Migrations\201603090735351_Teeth.Designer.cs">
+      <DependentUpon>201603090735351_Teeth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201603090801231_changeVisitingTime.cs" />
+    <Compile Include="Migrations\201603090801231_changeVisitingTime.Designer.cs">
+      <DependentUpon>201603090801231_changeVisitingTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\MaterialCategory.cs" />
     <Compile Include="Models\MedicalCategory.cs" />
@@ -91,6 +99,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201603090214412_addphone.resx">
       <DependentUpon>201603090214412_addphone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603090735351_Teeth.resx">
+      <DependentUpon>201603090735351_Teeth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201603090801231_changeVisitingTime.resx">
+      <DependentUpon>201603090801231_changeVisitingTime.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
