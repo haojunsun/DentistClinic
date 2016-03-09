@@ -87,5 +87,7 @@ namespace DentistClinic.Core.Models
         public decimal Cost { get; set; }
 
         public DateTime? AddTime { get; set; }
+
+        public string Phone { get; set; }
     }
 }

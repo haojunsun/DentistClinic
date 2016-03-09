@@ -12,7 +12,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>@ViewBag.Title - 长源牙科门诊就诊登记</title>
+    <title>@ViewBag.Title - 长源牙科就诊登记</title>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="~/Assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="~/Assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" />
@@ -66,7 +66,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:;">
+                            <a href="@(Url.Action("List", "OutpatientCases"))">
                                 门诊记录
                             </a>
                         </li>

@@ -928,10 +928,13 @@
     <Content Include="Views\MaterialCategory\List.cshtml" />
     <Content Include="Views\MaterialCategory\Add.cshtml" />
     <Content Include="Views\MaterialCategory\Edit.cshtml" />
+    <Content Include="Views\OutpatientCases\List.cshtml" />
+    <Content Include="Views\OutpatientCases\Add.cshtml" />
+    <Content Include="Views\OutpatientCases\Edit.cshtml" />
+    <Content Include="Views\OutpatientCases\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\OutpatientCases\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
