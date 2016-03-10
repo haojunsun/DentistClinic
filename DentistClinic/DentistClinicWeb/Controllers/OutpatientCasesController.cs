@@ -84,14 +84,20 @@ namespace DentistClinic.Web.Controllers
             return JumpUrl("List", "系统设置-材料类别-创建成功！");
         }
 
-        public ActionResult Edit()
+        public ActionResult Edit(int id)
         {
-            return View();
+            var oc = _outpatientCases.Get(id);
+            TreeBind(oc.MaterialCategory.MaterialCategoryId);
+            return View(oc);
         }
 
         public ActionResult Del(int id)
         {
-            return View();
+            var old = _outpatientCases.Get(id);
+            if (old == null)
+                return JumpUrl("List", "id错误");
+            _material.Delete(id);
+            return JumpUrl("List", "删除成功");
         }
 
         /// <summary>

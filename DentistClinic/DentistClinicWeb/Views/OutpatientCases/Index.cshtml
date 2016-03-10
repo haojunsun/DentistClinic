@@ -1,4 +1,7 @@
 ﻿@model DentistClinic.Core.Models.OutpatientCases
+@{
+    ViewBag.Title = "门诊详情";
+}
 <div class="row" ng-controller="ArticleController">
     <div class="col-md-12">
         <div class="portlet light">
@@ -8,7 +11,7 @@
                     <span class="caption-subject font-green-sharp bold uppercase">门诊记录 - @Model.Name</span>
                 </div>
                 <div class="actions">
-                    <a class="btn btn-sm green" href="@Url.Action("List")">>返回门诊记录列表</a>
+                    <a class="btn btn-sm green" href="@Url.Action("List")">返回门诊记录列表</a>
                 </div>
             </div>
             <div class="portlet-body form">

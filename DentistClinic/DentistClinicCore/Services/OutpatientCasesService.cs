@@ -85,5 +85,4 @@ namespace DentistClinic.Core.Services
            }
        }
     }
-
 }
