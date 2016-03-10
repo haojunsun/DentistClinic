@@ -71,6 +71,9 @@ namespace DentistClinic.Web.Controllers
             cases.TeethUpRight = Request.Form["TeethUpRight"];
             cases.TeethDownLeft = Request.Form["TeethDownLeft"];
             cases.TeethDownRight = Request.Form["TeethDownRight"];
+            cases.Sex = "男";
+            if (Sex=="1")
+                cases.Sex = "女";
 
             cases.Checkup = Checkup;
             cases.Treatment = Treatment;
