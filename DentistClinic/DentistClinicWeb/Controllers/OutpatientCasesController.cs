@@ -23,10 +23,10 @@ namespace DentistClinic.Web.Controllers
             _material = material;
         }
 
-        // GET: OutpatientCases
         public ActionResult Index(int id)
         {
-            return View();
+            var oc = _outpatientCases.Get(id);
+            return View(oc);
         }
 
         /// <summary>
@@ -100,7 +100,6 @@ namespace DentistClinic.Web.Controllers
         /// <param name="_pid"></param>
         private void TreeBind(int _pid)
         {
-
             List<MaterialCategory> list = _material.List().ToList();
             List<SelectListItem> selectList = new List<SelectListItem>();
 

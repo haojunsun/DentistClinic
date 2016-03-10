@@ -1,17 +1,114 @@
-﻿@{
-    Layout = null;
-}
+﻿@model DentistClinic.Core.Models.OutpatientCases
+<div class="row" ng-controller="ArticleController">
+    <div class="col-md-12">
+        <div class="portlet light">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class="fa fa-cogs font-green-sharp"></i>
+                    <span class="caption-subject font-green-sharp bold uppercase">门诊记录 - @Model.Name</span>
+                </div>
+                <div class="actions">
+                    <a class="btn btn-sm green" href="@Url.Action("List")">>返回门诊记录列表</a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form class="form-horizontal">
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-1">患者</label>
+                            <div class="col-md-11">
+                                <label class="control-label col-md-3"> @(Model.Name)</label>
+                            </div>
+                        </div>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
-    <div>
-    
+                        <div class="form-group">
+                            <label class="control-label col-md-1">性别</label>
+                            <div class="col-md-11">
+                                <label class="control-label col-md-3">@(Model.Sex)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1">年龄</label>
+                            <div class="col-md-11">
+                                <label class="control-label col-md-3">@(Model.age)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1">联系电话</label>
+                            <div class="col-md-11">
+                                <label class="control-label col-md-3">@(Model.Phone)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1">联系地址</label>
+                            <div class="col-md-11">
+                                <label class="control-label col-md-3">@(Model.Address)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1">主诉</label>
+                            <div class="col-md-11">
+                                <label class="control-label col-md-3">@(Model.Complaint)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1">病史</label>
+                            <div class="col-md-11">
+                                <label class="control-label col-md-3">@(Model.MedicalHistory)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1">牙位</label>
+                            <div class="col-md-11">
+                                <label class="control-label col-md-3">@(Model.TeethUpLeft)|@(Model.TeethUpRight)<br />@(Model.TeethDownLeft)|@(Model.TeethDownRight)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1">查体</label>
+                            <div class="col-md-11">
+                                <label class="control-label col-md-3">@(Model.Checkup)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1">治疗</label>
+                            <div class="col-md-11">
+                                <label class="control-label col-md-3">@(Model.Treatment)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1">材料</label>
+                            <div class="col-md-11">
+                                <label class="control-label col-md-3">@(Model.MaterialCategory.MaterialName)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1">费用</label>
+                            <div class="col-md-11">
+                                <label class="control-label col-md-3">@(Model.Cost)</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1">带入</label>
+                            <div class="col-md-11">
+                                @if (Model.IsWear)
+                                {
+                                    <label class="control-label col-md-3">是</label>
+                                }
+                                else
+                                {
+                                    <label class="control-label col-md-3">否</label>
+                                }
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-1">就诊日期</label>
+                            <div class="col-md-11">
+                                <label class="control-label col-md-3">@(Model.VisitingTime)</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+</div>
