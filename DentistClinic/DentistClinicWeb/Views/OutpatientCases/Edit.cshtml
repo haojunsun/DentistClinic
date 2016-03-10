@@ -67,117 +67,247 @@
                         <div class="form-group">
                             <label class="col-md-3 control-label">牙位上 左</label>
                             <div class="col-md-9">
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="8" name="TeethUpLeft" />8
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="7" name="TeethUpLeft" />7
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="6" name="TeethUpLeft" />6
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="5" name="TeethUpLeft" />5
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="5" name="TeethUpLeft" />4
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="3" name="TeethUpLeft" />3
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="2" name="TeethUpLeft" />2
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="1" name="TeethUpLeft" />1
-                                </label>
+                                @if (!string.IsNullOrEmpty(Model.TeethUpLeft))
+                                {
+                                    string[] sArray = Model.TeethUpLeft.Split(',');
+                                    var list = sArray.ToList();
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="8" name="TeethUpLeft" @(list.Any(x => x == "8") ? "checked" : "")/>8
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="7" name="TeethUpLeft" @(list.Any(x => x == "7") ? "checked" : "") />7
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="6" name="TeethUpLeft" @(list.Any(x => x == "6") ? "checked" : "") />6
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="5" name="TeethUpLeft" @(list.Any(x => x == "5") ? "checked" : "") />5
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="5" name="TeethUpLeft" @(list.Any(x => x == "4") ? "checked" : "") />4
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="3" name="TeethUpLeft" @(list.Any(x => x == "3") ? "checked" : "") />3
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="2" name="TeethUpLeft" @(list.Any(x => x == "2") ? "checked" : "") />2
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="1" name="TeethUpLeft" @(list.Any(x => x == "1") ? "checked" : "") />1
+                                    </label>
+                                }
+                                else
+                                {
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="8" name="TeethUpLeft" />8
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="7" name="TeethUpLeft" />7
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="6" name="TeethUpLeft" />6
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="5" name="TeethUpLeft" />5
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="5" name="TeethUpLeft" />4
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="3" name="TeethUpLeft" />3
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="2" name="TeethUpLeft" />2
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="1" name="TeethUpLeft" />1
+                                    </label>
+                                }
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">牙位上 右</label>
                             <div class="col-md-9" style="border-top: 1px solid #e5e5e5;">
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="1" name="TeethUpRight" />1
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="2" name="TeethUpRight" />2
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="3" name="TeethUpRight" />3
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="4" name="TeethUpRight" />4
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="5" name="TeethUpRight" />5
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="6" name="TeethUpRight" />6
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="7" name="TeethUpRight" />7
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="8" name="TeethUpRight" />8
-                                </label>
+                                @if (!string.IsNullOrEmpty(Model.TeethUpRight))
+                                {
+                                    string[] sArray = Model.TeethUpRight.Split(',');
+                                    var list = sArray.ToList();
+
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="1" name="TeethUpRight" @(list.Any(x => x == "1") ? "checked" : "")/>1
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="2" name="TeethUpRight" @(list.Any(x => x == "2") ? "checked" : "")/>2
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="3" name="TeethUpRight" @(list.Any(x => x == "3") ? "checked" : "")/>3
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="4" name="TeethUpRight" @(list.Any(x => x == "4") ? "checked" : "")/>4
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="5" name="TeethUpRight" @(list.Any(x => x == "5") ? "checked" : "")/>5
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="6" name="TeethUpRight" @(list.Any(x => x == "6") ? "checked" : "")/>6
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="7" name="TeethUpRight" @(list.Any(x => x == "7") ? "checked" : "")/>7
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="8" name="TeethUpRight" @(list.Any(x => x == "8") ? "checked" : "")/>8
+                                    </label>
+                                }
+                                else
+                                {
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="1" name="TeethUpRight" />1
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="2" name="TeethUpRight" />2
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="3" name="TeethUpRight" />3
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="4" name="TeethUpRight" />4
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="5" name="TeethUpRight" />5
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="6" name="TeethUpRight" />6
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="7" name="TeethUpRight" />7
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="8" name="TeethUpRight" />8
+                                    </label>
+                                }
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">牙位下 左</label>
                             <div class="col-md-9" style="border-top: 1px solid #e5e5e5;">
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="8" name="TeethDownLeft" />8
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="7" name="TeethDownLeft" />7
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="6" name="TeethDownLeft" />6
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="5" name="TeethDownLeft" />5
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="5" name="TeethDownLeft" />4
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="3" name="TeethDownLeft" />3
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="2" name="TeethDownLeft" />2
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="1" name="TeethDownLeft" />1
-                                </label>
+                                @if (!string.IsNullOrEmpty(Model.TeethDownLeft))
+                                {
+                                    string[] sArray = Model.TeethDownLeft.Split(',');
+                                    var list = sArray.ToList();
+
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="8" name="TeethDownLeft" @(list.Any(x => x == "8") ? "checked" : "") />8
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="7" name="TeethDownLeft" @(list.Any(x => x == "7") ? "checked" : "") />7
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="6" name="TeethDownLeft" @(list.Any(x => x == "6") ? "checked" : "") />6
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="5" name="TeethDownLeft" @(list.Any(x => x == "5") ? "checked" : "") />5
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="5" name="TeethDownLeft" @(list.Any(x => x == "4") ? "checked" : "") />4
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="3" name="TeethDownLeft" @(list.Any(x => x == "3") ? "checked" : "") />3
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="2" name="TeethDownLeft" @(list.Any(x => x == "2") ? "checked" : "") />2
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="1" name="TeethDownLeft" @(list.Any(x => x == "1") ? "checked" : "") />1
+                                    </label>
+                                }
+                                else
+                                {
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="8" name="TeethDownLeft"/>8
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="7" name="TeethDownLeft"/>7
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="6" name="TeethDownLeft"/>6
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="5" name="TeethDownLeft"/>5
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="5" name="TeethDownLeft"/>4
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="3" name="TeethDownLeft"/>3
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="2" name="TeethDownLeft"/>2
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="1" name="TeethDownLeft"/>1
+                                    </label>
+                                }
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-3 control-label">牙位下 右</label>
                             <div class="col-md-9" style="border-top: 1px solid #e5e5e5;">
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="1" name="TeethDownRight" />1
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="2" name="TeethDownRight" />2
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="3" name="TeethDownRight" />3
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="4" name="TeethDownRight" />4
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="5" name="TeethDownRight" />5
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="6" name="TeethDownRight" />6
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="7" name="TeethDownRight" />7
-                                </label>
-                                <label class="checkbox-inline">
-                                    <input type="checkbox" value="8" name="TeethDownRight" />8
-                                </label>
+                                @if (!string.IsNullOrEmpty(Model.TeethDownRight))
+                                {
+                                    string[] sArray = Model.TeethDownRight.Split(',');
+                                    var list = sArray.ToList();
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="1" name="TeethDownRight" @(list.Any(x => x == "1") ? "checked" : "") />1
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="2" name="TeethDownRight" @(list.Any(x => x == "2") ? "checked" : "") />2
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="3" name="TeethDownRight" @(list.Any(x => x == "3") ? "checked" : "") />3
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="4" name="TeethDownRight" @(list.Any(x => x == "4") ? "checked" : "") />4
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="5" name="TeethDownRight" @(list.Any(x => x == "5") ? "checked" : "") />5
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="6" name="TeethDownRight" @(list.Any(x => x == "6") ? "checked" : "") />6
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="7" name="TeethDownRight" @(list.Any(x => x == "7") ? "checked" : "") />7
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="8" name="TeethDownRight" @(list.Any(x => x == "8") ? "checked" : "") />8
+                                    </label>
+                                }
+                                else
+                                {
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="1" name="TeethDownRight"/>1
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="2" name="TeethDownRight"/>2
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="3" name="TeethDownRight"/>3
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="4" name="TeethDownRight"/>4
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="5" name="TeethDownRight"/>5
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="6" name="TeethDownRight"/>6
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="7" name="TeethDownRight"/>7
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="8" name="TeethDownRight"/>8
+                                    </label>
+                                }
                             </div>
                         </div>
                         <div class="form-group">

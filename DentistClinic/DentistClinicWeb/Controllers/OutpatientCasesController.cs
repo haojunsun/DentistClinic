@@ -90,6 +90,19 @@ namespace DentistClinic.Web.Controllers
             TreeBind(oc.MaterialCategory.MaterialCategoryId);
             return View(oc);
         }
+        [HttpPost]
+        public ActionResult Edit(OutpatientCases oc)
+        {
+            var old = _outpatientCases.Get(oc.OutpatientCasesId);
+            //old.Title = article.Title;
+            //old.Body = article.Body.Replace(" ", "&nbsp").Replace("\r\n", "<br />"); ;
+            //old.ManagerName = _simpleAccount.GetUserElement().Name;
+            //old.IsDraft = article.IsDraft;
+            //old.IsRelease = old.IsDraft == 0 ? 1 : 0;
+
+            _outpatientCases.Update(old);
+            return JumpUrl("List", "编辑成功！");
+        }
 
         public ActionResult Del(int id)
         {
